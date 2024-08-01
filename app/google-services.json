@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "161531631181",
+    "project_id": "fashionhub-app-444ac",
+    "storage_bucket": "fashionhub-app-444ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161531631181:android:ca8e8899ea25dbc3d0ee04",
+        "android_client_info": {
+          "package_name": "ccom.fashionhub.venkatasai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPo3qQAMwzplPVkADw2MUxn1WmmLq67fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
