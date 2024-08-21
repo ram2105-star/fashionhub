@@ -162,7 +162,67 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                     .requiredSize(size = 30.dp)
                     .clip(shape = CircleShape)
                     .background(color = Color(0xffe8e8e8)))
-            //2
+            Text(
+                text = "S",
+                color = Color.White,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 237.dp,
+                        y = 680.dp))
+            Text(
+                text = "M",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 281.dp,
+                        y = 680.dp))
+            Text(
+                text = "+",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 38.dp,
+                        y = 754.dp))
+            Text(
+                text = "1",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 80.dp,
+                        y = 751.dp))
+            Text(
+                text = "L",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 329.dp,
+                        y = 680.dp))
+            Text(
+                text = "-",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 119.dp,
+                        y = 754.dp))
+
             val localContext = LocalContext.current
             Box(
                 modifier = Modifier
