@@ -51,6 +51,172 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
 
+    val scaffoldState = rememberScaffoldState()
+    val coroutineScope = rememberCoroutineScope()
+
+    homeViewModel.getUserData()
+
+    Scaffold(
+        scaffoldState = scaffoldState,
+        topBar = {
+            AppToolbar(toolbarTitle = stringResource(id = R.string.home),
+                logoutButtonClicked = {
+                    homeViewModel.logout()
+                },
+                navigationIconClicked = {
+                    coroutineScope.launch {
+                        scaffoldState.drawerState.open()
+                    }
+                }
+            )
+        },
+        drawerGesturesEnabled = scaffoldState.drawerState.isOpen,
+        drawerContent = {
+            NavigationDrawerHeader(homeViewModel.emailId.value)
+            NavigationDrawerBody(navigationDrawerItems = homeViewModel.navigationItemsList,
+                onNavigationItemClicked = {
+                    Log.d("ComingHere","inside_NavigationItemClicked")
+                    Log.d("ComingHere","${it.itemId} ${it.title}")
+                })
+        }
+
+    ) { paddingValues ->
+
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Blue)
+                .padding(paddingValues)
+        ) {
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier = Modifier
+                        .requiredWidth(width = 360.dp)
+                        .requiredHeight(height = 640.dp)
+                        .background(color = Color.White)
+                ) {
+
+
+                    val localContext = LocalContext.current
+
+
+                    Image(
+                        painter = painterResource(id = R.drawable.ban),
+                        contentDescription = "",
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(
+                                x = 1.dp,
+                                y = 0.dp
+                            )
+                            .requiredWidth(width = 455.dp)
+                            .requiredHeight(height = 260.dp)
+                            .clip(shape = RoundedCornerShape(15.dp))
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(
+                                x = 21.dp,
+                                y = 190.dp
+                            )
+                            .requiredWidth(width = 370.dp)
+                            .requiredHeight(height = 140.dp)
+                            .clip(shape = RoundedCornerShape(15.dp))
+                            .background(color = Color.White)
+                            .clickable {
+                                localContext.startActivity(
+                                    Intent(localContext, DetailsPageActivity::class.java)
+                                )
+                            }
+                    )
+
+                    {
+                        Image(
+                            painter = painterResource(id = R.drawable.bow),
+                            contentDescription = "",
+                            modifier = Modifier
+                                .align(alignment = Alignment.TopStart)
+                                .offset(
+                                    x = 1.dp,
+                                    y = 0.dp
+                                )
+                                .requiredWidth(width = 360.dp)
+                                .requiredHeight(height = 150.dp)
+                                .clip(shape = RoundedCornerShape(15.dp))
+
+                        )
+                    }
+
+                    //1
+                    Box(
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(x = 13.dp,
+                                y = 460.dp)
+                            .requiredWidth(width = 380.dp)
+                            .requiredHeight(height = 130.dp)
+                            .clip(shape = RoundedCornerShape(15.dp))
+                            .background(color = Color.White)
+                            .clickable {
+                                localContext.startActivity(
+                                    Intent(localContext, DetailsPageActivity::class.java)
+                                )
+                            }
+                    )
+                    {
+                        Image(
+                            painter = painterResource(id = R.drawable.giw),
+                            contentDescription = " ",
+                            modifier = Modifier
+                                .align(alignment = Alignment.TopStart)
+                                .offset(
+                                    x = 11.dp,
+                                    y = 0.dp
+                                )
+                                .requiredWidth(width = 360.dp)
+                                .requiredHeight(height = 260.dp)
+                        )
+
+
+                    }
+                    //2
+                    Box(
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(x = 14.dp,
+                                y = 330.dp)
+                            .requiredWidth(width = 375.dp)
+                            .requiredHeight(height = 130.dp)
+                            .clip(shape = RoundedCornerShape(15.dp))
+                            .background(color = Color.White)
+                            .clickable {
+                                localContext.startActivity(
+                                    Intent(localContext, DetailsPageActivity::class.java)
+                                )
+                            }
+                    ){
+                        Image(
+                            painter = painterResource(id = R.drawable.mew),
+                            contentDescription = "",
+                            modifier = Modifier
+                                .align(alignment = Alignment.TopStart)
+                                .offset(x = 11.dp,
+                                    y =0.dp)
+                                .requiredWidth(width = 360.dp)
+                                .requiredHeight(height = 200.dp)
+
+                                .clip(shape = RoundedCornerShape(20.dp))
+
+                        )}
+
+
+                    //3
+                }
+
+            }
+        }
+    }
 
 }
 
