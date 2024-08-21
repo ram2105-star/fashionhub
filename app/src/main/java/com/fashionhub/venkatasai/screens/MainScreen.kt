@@ -149,6 +149,23 @@ fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
                     }
 
                     //1
+                    Text(
+                        text = "Recently Viewed",
+                        color = Color.Black,
+                        style = TextStyle(
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.Bold
+                        ),
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(
+                                x = 6.dp,
+                                y = 25.dp
+                            )
+                            .requiredWidth(width = 215.dp)
+                            .requiredHeight(height = 68.dp)
+                    )
+
                     Box(
                         modifier = Modifier
                             .align(alignment = Alignment.TopStart)
