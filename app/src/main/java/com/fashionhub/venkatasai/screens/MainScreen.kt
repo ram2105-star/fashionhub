@@ -197,7 +197,26 @@ fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
 
 
                     }
-                    //2
+                    
+                    Image(
+                        painter = painterResource(id = R.drawable.pro),
+                        contentDescription = " ",
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(x = 354.dp,
+                                y = 26.dp)
+                            .requiredSize(size = 42.dp)
+                            .clip(shape = CircleShape)
+                            .clickable {
+                                localContext.startActivity(
+                                    Intent(localContext, UserProfileActivity::class.java)
+                                )
+                            }
+                            .border(border = BorderStroke(0.10000000149011612.dp, Color(0xffbdbdbd)),
+                                shape = CircleShape)
+                    )
+
+
                     Box(
                         modifier = Modifier
                             .align(alignment = Alignment.TopStart)
