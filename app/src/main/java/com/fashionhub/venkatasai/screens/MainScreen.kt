@@ -245,7 +245,7 @@ fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
                                 .clip(shape = RoundedCornerShape(20.dp))
 
                         )}
-                    
+
                     Box(
                         modifier = Modifier
                             .align(alignment = Alignment.TopStart)
