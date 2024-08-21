@@ -197,7 +197,7 @@ fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
 
 
                     }
-                    
+
                     Image(
                         painter = painterResource(id = R.drawable.pro),
                         contentDescription = " ",
@@ -245,9 +245,34 @@ fun HomeScreen(homeViewModel: FashiomHubViewModel = viewModel()) {
                                 .clip(shape = RoundedCornerShape(20.dp))
 
                         )}
+                    
+                    Box(
+                        modifier = Modifier
+                            .align(alignment = Alignment.TopStart)
+                            .offset(x = 14.dp,
+                                y = 590.dp)
+                            .requiredWidth(width = 375.dp)
+                            .requiredHeight(height = 130.dp)
+                            .clip(shape = RoundedCornerShape(15.dp))
+                            .background(color = Color.White)
+                            .clickable {
+                                localContext.startActivity(
+                                    Intent(localContext, DetailsPageActivity::class.java)
+                                )
+                            }
+                    ){
+                        Image(
+                            painter = painterResource(id = R.drawable.wow),
+                            contentDescription = " ",
+                            modifier = Modifier
+                                .align(alignment = Alignment.TopStart)
+                                .offset(x = 10.dp,
+                                    y = 0.dp)
+                                .requiredWidth(width = 360.dp)
+                                .requiredHeight(height = 260.dp)
+                                .clip(shape = RoundedCornerShape(10.dp))
+                        )}
 
-
-                    //3
                 }
 
             }
