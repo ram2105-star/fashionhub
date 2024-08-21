@@ -42,11 +42,134 @@ import com.fashionhub.venkatasai.ui.theme.Primary
 
 class PaymentActivity : ComponentActivity() {
 
+    @SuppressLint("SuspiciousIndentation")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+
+            val context = LocalContext.current
+            val gradient45 = Brush.linearGradient(
+                colors = listOf(Color.White, Color.White),
+                start = Offset(0f, Float.POSITIVE_INFINITY),
+                end = Offset(Float.POSITIVE_INFINITY, 0f))
+
+            Surface(
+                modifier = Modifier
+                    .background(gradient45)
+                    .fillMaxSize()
+                    .padding(28.dp)
+            ) {
+
+
+                Column(modifier = Modifier.fillMaxSize()
+
+                    .background(gradient45),
+
+                    horizontalAlignment = Alignment.CenterHorizontally) {
+
+                    Image(
+                        modifier = Modifier.size(250.dp),
+                        painter = painterResource(id = R.drawable.cardatm),
+                        contentDescription = null)
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    Spacer(modifier = Modifier.height(5.dp))
+                    HeadingTextComponent(value = "Payment Details")
+
+
+
+
+                    Spacer(modifier = Modifier.height(5.dp)
+                    )
+
+
+                    MyTextFieldComponent(
+                        labelValue = "Account Holder Name",
+                        painterResource(id = R.drawable.card_png1),
+                        onTextChanged = {
+
+                        },
+                    )
+
+
+                    MyTextFieldComponent(
+                        labelValue = "Card number",
+                        painterResource(id = R.drawable.card_png1),
+                        onTextChanged = {
+
+                        },
+                    )
+
+                    MyTextFieldComponent(
+                        labelValue = "Address",
+                        painterResource = painterResource(id = R.drawable.card_png1),
+                        onTextChanged = {
+
+                        },
+                    )
+
+                    MyTextFieldComponent(
+                        labelValue = " 3 digits Cvv Number ",
+                        painterResource = painterResource(id = R.drawable.card_png1),
+                        onTextChanged = {
+
+                        },
+                    )
+
+
+                    Spacer(modifier = Modifier.height(20.dp))
+                    val toy = ""
+                    Button(
+                        modifier = Modifier
+                            .wrapContentWidth()
+                            .heightIn(48.dp),
+                        onClick = {
+                            context.startActivity(Intent(context, ConfirmationActivity::class.java))
+                        },
+                        contentPadding = PaddingValues(),
+                        colors = ButtonDefaults.buttonColors(Color.Transparent),
+                        shape = RoundedCornerShape(50.dp),
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(48.dp)
+                                .background(
+                                    brush = Brush.horizontalGradient(listOf(Primary, Primary)),
+                                    shape = RoundedCornerShape(20.dp)
+                                ),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = "Proceed",
+                                fontSize = 18.sp,
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+
+
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 
 }
 
 @Preview
 @Composable
 fun DefaultPreviewOfSignUpScreen() {
-//    Paymen()
+//    Payment()
+
+
 }
