@@ -66,7 +66,45 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 .requiredHeight(height = 812.dp)
                 .background(color = Color.White)
         ) {
-            //1
+            Image(
+                painter = painterResource(id = R.drawable.shirt),
+                contentDescription = "",
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 0.dp,
+                        y = 88.dp)
+                    .requiredWidth(width = 415.dp)
+                    .requiredHeight(height = 463.dp))
+            Image(
+                painter = painterResource(id = R.drawable.heart),
+                contentDescription = "heart",
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 316.dp,
+                        y = 35.dp)
+                    .requiredSize(size = 24.dp))
+            Image(
+                painter = painterResource(id = R.drawable.arrow_left),
+                contentDescription = "arrow-left",
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 34.dp,
+                        y = 35.dp)
+                    .requiredSize(size = 24.dp))
+
+
+
+
+            Image(
+                painter = painterResource(id = R.drawable.rec),
+                contentDescription = "",
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(x = 0.dp,
+                        y = 468.dp)
+                    .requiredWidth(width = 415.dp)
+                    .requiredHeight(height = 463.dp))
+
             Text(
                 text = "£ 430.00",
                 color = Color.Black,
